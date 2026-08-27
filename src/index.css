@@ -1,0 +1,47 @@
+:root {
+  --sage-deep: #659287;    
+  --sage-medium: #88BDA4;  
+  --sage-light: #B1D3B9;   
+  --sage-pale: #E6F2DD;    
+
+  /* Versões em canais RGB (ideais para opacidade com rgba()) */
+  --sage-deep-rgb: 101, 146, 135;
+  --sage-medium-rgb: 136, 189, 164;
+  --sage-light-rgb: 177, 211, 185;
+  --sage-pale-rgb: 230, 242, 221;
+
+  /* Cores de Ação (Brand & Buttons) */
+  --color-primary: var(--sage-deep);
+  --color-primary-hover: #527970;        
+  --color-primary-active: #43635c;
+  --color-secondary: var(--sage-medium);
+  --color-secondary-hover: #75a890;
+  
+  /* Fundos e Superfícies */
+  --bg-page: #fafdf8;                    /* Fundo geral neutro levemente esverdeado */
+  --bg-surface: #ffffff;                 /* Cards e modais */
+  --bg-surface-subtle: var(--sage-pale); /* Fundo com destaque suave */
+  --bg-surface-muted: rgba(var(--sage-light-rgb), 0.25);
+
+  /* Bordas e Linhas */
+  --border-subtle: var(--sage-light);
+  --border-strong: var(--sage-deep);
+  --border-focus: var(--sage-medium);
+
+  /* Tipografia & Acessibilidade */
+  --text-primary: #1e2e2a;               /* Verde-escuro profundo para leitura nítida */
+  --text-secondary: #4a635c;             /* Texto de apoio */
+  --text-muted: #738e87;                 /* Texto desativado ou placeholders */
+  --text-on-primary: #ffffff;            /* Texto claro sobre botões/fundo escuro */
+  --text-on-pale: #233833;               /* Texto escuro sobre o fundo mais claro */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}

@@ -1,0 +1,56 @@
+header {
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: var(--sage-deep);
+    color: var(--bg-page);
+    height: 15vh;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.logo {
+    font-size: 75px;
+}
+
+.logo-text {
+    font-size: 30px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+nav a {
+    position: relative;
+    color: var(--bg-page);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: var(--bg-page);
+    height: 2px;
+    width: 0%;
+    transition: all 0.3s ease;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
