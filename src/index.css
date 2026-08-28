@@ -1,47 +1,78 @@
 :root {
-  --sage-deep: #659287;    
-  --sage-medium: #88BDA4;  
-  --sage-light: #B1D3B9;   
-  --sage-pale: #E6F2DD;    
+  /* Cor Base Principal: #FF9A86 (Terracota / Coral Suave Elegante) */
+  --sage-deep: #FF9A86;    
+  --sage-medium: #FFB2A3;  
+  --sage-light: #FFCCC2;   
+  --sage-pale: #FFF0EC;    
 
-  /* Versões em canais RGB (ideais para opacidade com rgba()) */
-  --sage-deep-rgb: 101, 146, 135;
-  --sage-medium-rgb: 136, 189, 164;
-  --sage-light-rgb: 177, 211, 185;
-  --sage-pale-rgb: 230, 242, 221;
+  /* Escala de Tons Escuros (Análogos mais escuros derivados da cor principal) */
+  --sage-dark: #C25442;        /* Terracota Escuro Intenso */
+  --sage-darker: #8C3426;      /* Terracota Profundo Escuro */
+  --sage-darkest: #4A1A12;     /* Tom Terracota Noturno / Escuro Nobre */
+  --sage-night: #260D09;       /* Tom de Fundo Noturno Profundo */
 
-  /* Cores de Ação (Brand & Buttons) */
+  /* Versões em canais RGB (para opacidade e efeitos de vidro/rgba) */
+  --sage-deep-rgb: 255, 154, 134;
+  --sage-medium-rgb: 255, 178, 163;
+  --sage-light-rgb: 255, 204, 194;
+  --sage-pale-rgb: 255, 240, 236;
+  --sage-dark-rgb: 194, 84, 66;
+  --sage-darker-rgb: 140, 52, 38;
+  --sage-darkest-rgb: 74, 26, 18;
+  --sage-night-rgb: 38, 13, 9;
+
+  /* Cores de Ação (Brand, Buttons & Highlights) */
   --color-primary: var(--sage-deep);
-  --color-primary-hover: #527970;        
-  --color-primary-active: #43635c;
+  --color-primary-hover: #E58370;        
+  --color-primary-active: #CC6F5E;
   --color-secondary: var(--sage-medium);
-  --color-secondary-hover: #75a890;
+  --color-secondary-hover: #E89D8E;
+  --color-dark-action: var(--sage-dark);
+  --color-dark-action-hover: var(--sage-darker);
   
-  /* Fundos e Superfícies */
-  --bg-page: #fafdf8;                    /* Fundo geral neutro levemente esverdeado */
-  --bg-surface: #ffffff;                 /* Cards e modais */
+  /* Fundos e Superfícies (Escaras e Claras) */
+  --bg-page: #FFF9F8;                    /* Fundo geral neutro levemente aquecido */
+  --bg-page-dark: #1a1a1a;               /* Fundo geral neutro versão escura */
+  --bg-surface: #ffffff;                 /* Cards e modais claros */
   --bg-surface-subtle: var(--sage-pale); /* Fundo com destaque suave */
   --bg-surface-muted: rgba(var(--sage-light-rgb), 0.25);
+  --bg-surface-dark: var(--sage-darker); /* Cards e seções com fundo escuro elegante */
+  --bg-surface-night: var(--sage-night); /* Seções noturnas / contraste máximo */
 
   /* Bordas e Linhas */
   --border-subtle: var(--sage-light);
   --border-strong: var(--sage-deep);
   --border-focus: var(--sage-medium);
+  --border-dark: var(--sage-dark);
 
   /* Tipografia & Acessibilidade */
-  --text-primary: #1e2e2a;               /* Verde-escuro profundo para leitura nítida */
-  --text-secondary: #4a635c;             /* Texto de apoio */
-  --text-muted: #738e87;                 /* Texto desativado ou placeholders */
-  --text-on-primary: #ffffff;            /* Texto claro sobre botões/fundo escuro */
-  --text-on-pale: #233833;               /* Texto escuro sobre o fundo mais claro */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --text-primary: #3D211B;               /* Marrom terracota profundo para leitura agradável e nítida */
+  --text-secondary: #6B423A;             /* Texto de apoio em tom terroso suave */
+  --text-muted: #9E7269;                 /* Texto desativado ou placeholders */
+  --text-on-primary: #ffffff;            /* Texto claro sobre o fundo principal */
+  --text-on-pale: #4A2822;               /* Texto escuro sobre o fundo terracota claro */
+  --text-on-dark: #FFF0EC;               /* Texto claro radiante sobre seções escuras */
 }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
   border: none;
   outline: none;
   text-decoration: none;
   list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
