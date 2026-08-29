@@ -33,7 +33,7 @@ function SobreMim() {
                     <div className="bento-card bento-profile-card">
                         <div className="profile-img-container">
                             <div className="profile-img-glow"></div>
-                            <img src={FotoSobre} alt="Dra. Halana Maranha - Psicóloga Clínica" className="profile-img" />
+                            <img src={FotoSobre} alt="Psi. Halana Maranha - Psicóloga Clínica" className="profile-img" />
                             <div className="profile-tag">
                                 <span>Psicóloga Clínica</span>
                                 <strong>CRP 06/XXXXXX</strong>
