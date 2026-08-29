@@ -1,4 +1,5 @@
 import './App.css'
+import Footer from './components/footer/footer'
 import Header from './components/header/header'
 import AbordagemClinica from './pages/abordagem-clinica/abordagem-clinica'
 import Contato from './pages/contato/contato'
@@ -17,6 +18,8 @@ function App() {
       <AbordagemClinica />
 
       <Contato />
+
+      <Footer />
     </>
   )
 }

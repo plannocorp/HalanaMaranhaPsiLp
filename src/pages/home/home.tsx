@@ -21,7 +21,7 @@ function Home() {
                     </p>
 
                     <div className="hero-actions">
-                        <a href="#agendar" className="hero-btn-primary">
+                        <a href="#contato" className="hero-btn-primary">
                             <span>Agendar Primeira Consulta</span>
                             <svg className="btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -69,7 +69,7 @@ function Home() {
 
                         {/* Imagem Principal */}
                         <div className="img-crop">
-                            <img src={FotoPrincipal} alt="Dra. Halana Maranha - Psicóloga Clínica" />
+                            <img src={FotoPrincipal} alt="Psi. Halana Maranha - Psicóloga Clínica" />
                         </div>
 
                         {/* Card Flutuante de Destaque */}

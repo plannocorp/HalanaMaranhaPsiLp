@@ -45,12 +45,12 @@ function Contato() {
                                 <p>Tire suas dúvidas ou agende sua sessão de forma simples e direta.</p>
                                 
                                 <a 
-                                    href="https://wa.me/5500000000000" 
+                                    href="https://wa.me/556292596851?text=Olá,%20vim%20pelo%20site,%20gostaria%20de%20marcar%20uma%20consulta!"
                                     target="_blank" 
                                     rel="noopener noreferrer" 
                                     className="whatsapp-btn"
                                 >
-                                    <span>Falar com a Dra. Halana no WhatsApp</span>
+                                    <span>Falar com a Psi. Halana no WhatsApp</span>
                                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
                                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -171,7 +171,7 @@ function Contato() {
 
                 {/* Rodapé da Seção / Ética & CRP */}
                 <div className="contato-footer-note">
-                    <p>Dra. Halana Maranha • Psicóloga Clínica • CRP 06/XXXXXX</p>
+                    <p>Psi. Halana Maranha • Psicóloga Clínica • CRP 06/XXXXXX</p>
                     <p className="ethics-text">Todos os atendimentos seguem rigorosamente o Código de Ética Profissional do Psicólogo.</p>
                 </div>
             </div>
