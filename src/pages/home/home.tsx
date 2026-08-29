@@ -29,7 +29,7 @@ function Home() {
                             </svg>
                         </a>
                         
-                        <a href="#sobre" className="hero-btn-secondary">
+                        <a href="#abordagem" className="hero-btn-secondary">
                             <span>Conhecer Abordagem</span>
                         </a>
                     </div>
