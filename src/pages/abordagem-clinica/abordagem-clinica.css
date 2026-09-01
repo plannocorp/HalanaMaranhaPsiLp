@@ -13,14 +13,20 @@
 .wave-container {
     width: 100%;
     line-height: 0;
+    font-size: 0;
     overflow: hidden;
+    margin-top: -3px; 
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 10;
 }
 
 .wave-container svg {
     display: block;
     width: 100%;
     height: 120px;
+    vertical-align: top;
+    transform: scale(1.005);
 }
 
 .abordagem-container {
@@ -439,4 +445,187 @@
         top: 15px;
         left: 15px;
     }
+}
+
+/* ==========================================================================
+   Design Responsivo Avançado (Smartphones, Foldables & Tablets)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .abordagem-section {
+        padding-bottom: 5rem;
+    }
+
+    .abordagem-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .theorists-diagram-wrapper {
+        max-width: 520px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .wave-container svg {
+        height: 80px;
+    }
+
+    .abordagem-container {
+        gap: 2.5rem;
+    }
+
+    .abordagem-header {
+        gap: 0.9rem;
+    }
+
+    .theorists-diagram-wrapper {
+        padding: 2rem 1.25rem;
+        border-radius: 24px;
+    }
+
+    /* Órbita adaptada para tablets pequenos */
+    .theorists-diagram-container {
+        width: 340px;
+        height: 340px;
+    }
+
+    .center-psi-circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .psi-symbol-large {
+        font-size: 4.5rem;
+    }
+
+    .theorist-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Posições orbitais ajustadas */
+    .circle-top { top: -10px; }
+    .circle-top-right { top: 18px; right: 18px; }
+    .circle-right { right: -10px; }
+    .circle-bottom-right { bottom: 18px; right: 18px; }
+    .circle-bottom { bottom: -10px; }
+    .circle-bottom-left { bottom: 18px; left: 18px; }
+    .circle-left { left: -10px; }
+    .circle-top-left { top: 18px; left: 18px; }
+}
+
+@media (max-width: 480px) {
+    .abordagem-section {
+        padding-bottom: 4rem;
+    }
+
+    .wave-container svg {
+        height: 60px;
+    }
+
+    .eyebrow-badge-light {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.9rem;
+    }
+
+    .pillar-card {
+        padding: 1.1rem 1.1rem;
+        gap: 0.9rem;
+        border-radius: 16px;
+    }
+
+    .pillar-card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+        border-radius: 12px;
+    }
+
+    .pillar-card-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .pillar-card-content p {
+        font-size: 0.85rem;
+    }
+
+    .closing-quote-banner {
+        padding: 1rem 1.1rem;
+    }
+
+    .closing-quote-banner p {
+        font-size: 0.98rem;
+    }
+
+    .theorists-diagram-wrapper {
+        padding: 1.5rem 0.75rem;
+        border-radius: 20px;
+    }
+
+    /* Tamanho otimizado para celulares padrão (até 480px) */
+    .theorists-diagram-container {
+        width: 290px;
+        height: 290px;
+        margin: 0.75rem 0;
+    }
+
+    .center-psi-circle {
+        width: 135px;
+        height: 135px;
+    }
+
+    .psi-symbol-large {
+        font-size: 3.6rem;
+    }
+
+    .theorist-circle {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+    }
+
+    /* Re-alinhamento orbital milimétrico sem cortes nas bordas */
+    .circle-top { top: -8px; }
+    .circle-top-right { top: 14px; right: 14px; }
+    .circle-right { right: -8px; }
+    .circle-bottom-right { bottom: 14px; right: 14px; }
+    .circle-bottom { bottom: -8px; }
+    .circle-bottom-left { bottom: 14px; left: 14px; }
+    .circle-left { left: -8px; }
+    .circle-top-left { top: 14px; left: 14px; }
+}
+
+@media (max-width: 360px) {
+    /* Dispositivos extremamente estreitos (ex: Galaxy Fold fechado / telas < 360px) */
+    .theorists-diagram-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .center-psi-circle {
+        width: 115px;
+        height: 115px;
+    }
+
+    .psi-symbol-large {
+        font-size: 3rem;
+    }
+
+    .theorist-circle {
+        width: 44px;
+        height: 44px;
+        border-width: 2px;
+    }
+
+    .circle-top { top: -6px; }
+    .circle-top-right { top: 10px; right: 10px; }
+    .circle-right { right: -6px; }
+    .circle-bottom-right { bottom: 10px; right: 10px; }
+    .circle-bottom { bottom: -6px; }
+    .circle-bottom-left { bottom: 10px; left: 10px; }
+    .circle-left { left: -6px; }
+    .circle-top-left { top: 10px; left: 10px; }
 }
