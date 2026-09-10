@@ -113,7 +113,7 @@ function AbordagemClinica() {
                                 </div>
 
                                 {/* 4 Círculos Diagonais (Superior Direito, Inferior Direito, Inferior Esquerdo, Superior Esquerdo) */}
-                                <div className="theorist-circle circle-top-right" title="Karl Marx">
+                                <div className="theorist-circle circle-top-right" title="Maria Vasconcellos">
                                     <img src={Teorico5} alt="Teórico 5" />
                                 </div>
 
