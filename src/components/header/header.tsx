@@ -21,6 +21,12 @@ function Header() {
         })
     }
 
+    // Função unificada para fechar o menu e rolar para o topo
+    const handleHomeClick = () => {
+        closeMenu()
+        scrollToTop()
+    }
+
     // Listener para alterar background/sombra do header ao rolar
     useEffect(() => {
         const handleScroll = () => {
@@ -76,11 +82,11 @@ function Header() {
         <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
             <div className="header-container">
                 {/* Logo Brand Box */}
-                <a 
-                    href="#home" 
+                <a  
                     className="logo-box" 
-                    onClick={closeMenu} 
+                    onClick={handleHomeClick}
                     aria-label="Halana Maranha Psicologia Clínica Home"
+                    style={{ cursor: 'pointer' }}
                 >
                     <div className="logo-icon-wrapper">
                         <span className="logo-symbol">Ψ</span>
