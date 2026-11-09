@@ -45,7 +45,7 @@ function Contato() {
                                 <p>Tire suas dúvidas ou agende sua sessão de forma simples e direta.</p>
                                 
                                 <a 
-                                    href="https://wa.me/556292596851?text=Olá,%20vim%20pelo%20site,%20gostaria%20de%20marcar%20uma%20consulta!"
+                                    href="https://wa.me/5562981124683?text=Olá,%20vim%20pelo%20site,%20gostaria%20de%20marcar%20uma%20consulta!"
                                     target="_blank" 
                                     rel="noopener noreferrer" 
                                     className="whatsapp-btn"
@@ -73,7 +73,7 @@ function Contato() {
                                 <div className="info-icon">✉️</div>
                                 <div className="info-details">
                                     <strong>E-mail</strong>
-                                    <span>contato@halanamaranha.com.br</span>
+                                    <span>halana.maranha@gmail.com</span>
                                 </div>
                             </div>
 

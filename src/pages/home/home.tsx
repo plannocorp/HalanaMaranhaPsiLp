@@ -17,7 +17,7 @@ function Home() {
                     </h1>
 
                     <p className="main-subtitle">
-                        Um espaço seguro e acolhedor dedicado à escuta ética, ao autoconhecimento e à transformação da sua saúde mental através de um olhar singular e humanizado da Psicologia Social e Fenomenológica Existencial.
+                        Um espaço seguro e acolhedor dedicado à escuta ética, ao autoconhecimento e à ressignificação da sua angústia através de um olhar singular e humanizado da Psicologia Sistêmica e Fenomenológica Existencial.
                     </p>
 
                     <div className="hero-actions">
@@ -41,7 +41,7 @@ function Home() {
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <polyline points="12 6 12 12 16 14"></polyline>
                             </svg>
-                            <span>Sessões de até 1 hora</span>
+                            <span>Sessões de até 50 minutos</span>
                         </div>
 
                         <div className="feature-item">

@@ -21,12 +21,24 @@
     gap: 4rem;
 }
 
-.text-box {
+text-box {
     width: 52%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
+    animation: heroSlideFromLeft 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroSlideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Badge de Topo */
@@ -171,11 +183,27 @@
     color: var(--sage-dark);
 }
 
+/* --------------------------------------------------------------------------
+   Lado Direito - Imagem & Elementos (Animação subindo 10px)
+   -------------------------------------------------------------------------- */
+
 .img-box {
     width: 44%;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: heroRiseUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+}
+
+@keyframes heroRiseUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .img-wrapper {
@@ -291,6 +319,10 @@
         transform: translateY(-8px);
     }
 }
+
+/* --------------------------------------------------------------------------
+   Design Responsivo (Smartphones e Tablets)
+   -------------------------------------------------------------------------- */
 
 @media (max-width: 968px) {
     .hero-section {
