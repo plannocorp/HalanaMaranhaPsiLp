@@ -1,7 +1,3 @@
-/* ==========================================================================
-   ABORDAGEM & CLÍNICA SECTION STYLES (Diagrama de 8 Teóricos)
-   ========================================================================== */
-
 .abordagem-section {
     width: 100%;
     position: relative;
@@ -9,7 +5,6 @@
     padding-bottom: 6rem;
 }
 
-/* Transição SVG de Onda vindo da seção escura (Sobre Mim) */
 .wave-container {
     width: 100%;
     line-height: 0;
@@ -37,10 +32,6 @@
     flex-direction: column;
     gap: 3.5rem;
 }
-
-/* --------------------------------------------------------------------------
-   Cabeçalho da Seção
-   -------------------------------------------------------------------------- */
 
 .abordagem-header {
     display: flex;
@@ -95,20 +86,12 @@
     line-height: 1.65;
 }
 
-/* --------------------------------------------------------------------------
-   Grid Principal (2 Colunas)
-   -------------------------------------------------------------------------- */
-
 .abordagem-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 3.5rem;
     align-items: center;
 }
-
-/* --------------------------------------------------------------------------
-   Coluna Esquerda - Texto Explicativo & Pilares
-   -------------------------------------------------------------------------- */
 
 .text-content-col {
     display: flex;
@@ -143,11 +126,36 @@
     border-radius: 20px;
     padding: 1.35rem 1.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    opacity: 0;
+    transform: translateX(-40px);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+.section-active .pillar-card-1 {
+    animation: pillarSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0s forwards;
+}
+
+.section-active .pillar-card-2 {
+    animation: pillarSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+.section-active .pillar-card-3 {
+    animation: pillarSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+@keyframes pillarSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .pillar-card:hover {
-    transform: translateX(6px);
+    transform: translateX(6px) !important;
     border-color: var(--sage-medium);
     box-shadow: 0 10px 28px rgba(var(--sage-dark-rgb), 0.1);
 }
@@ -183,23 +191,39 @@
 }
 
 .closing-quote-banner {
+    position: relative;
     background: linear-gradient(135deg, var(--sage-pale) 0%, rgba(var(--sage-light-rgb), 0.25) 100%);
     border-left: 4px solid var(--sage-dark);
     padding: 1.25rem 1.5rem;
     border-radius: 16px;
+    overflow: hidden;
 }
 
-.closing-quote-banner p {
+.typewriter-quote {
     font-family: var(--font-heading);
     font-size: 1.1rem;
     font-style: italic;
     color: var(--sage-darker);
     line-height: 1.55;
+    position: relative;
+    display: block;
+    opacity: 0;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
-/* --------------------------------------------------------------------------
-   Coluna Direita - Diagrama Orbital Completo com 8 Círculos de Teóricos
-   -------------------------------------------------------------------------- */
+.section-active .typewriter-quote {
+    opacity: 1;
+    animation: typewriterEffect 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.9s forwards;
+}
+
+@keyframes typewriterEffect {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
 
 .diagram-content-col {
     display: flex;
@@ -215,20 +239,63 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.2rem;
     width: 100%;
     max-width: 500px;
 }
 
+.diagram-header-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.6rem;
+}
+
 .diagram-title {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     font-weight: 700;
     color: var(--text-primary);
     text-align: center;
 }
 
-/* Container do Diagrama de 8 Pontos */
+.diagram-interactive-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.35rem 0.85rem;
+    background-color: var(--sage-pale);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--sage-darker);
+    line-height: 1.3;
+}
+
+.badge-pulse-indicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--sage-dark);
+    box-shadow: 0 0 0 0 rgba(var(--sage-dark-rgb), 0.7);
+    animation: indicatorPulse 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes indicatorPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--sage-dark-rgb), 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(var(--sage-dark-rgb), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--sage-dark-rgb), 0);
+    }
+}
+
 .theorists-diagram-container {
     position: relative;
     width: 380px;
@@ -236,10 +303,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
-/* Grande Círculo Central do PSI */
 .center-psi-circle {
     width: 180px;
     height: 180px;
@@ -270,7 +336,6 @@
     user-select: none;
 }
 
-/* Estilo Base dos 8 Círculos dos Teóricos (68px de Diâmetro) */
 .theorist-circle {
     position: absolute;
     z-index: 3;
@@ -280,12 +345,16 @@
     overflow: hidden;
     background-color: #ffffff;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    outline: none;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
 .theorist-circle:hover {
-    transform: scale(1.2);
-    box-shadow: 0 10px 28px rgba(var(--sage-dark-rgb), 0.3);
+    transform: scale(1.22);
+    box-shadow: 0 12px 28px rgba(var(--sage-dark-rgb), 0.35);
     z-index: 5;
 }
 
@@ -293,75 +362,65 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    pointer-events: none;
 }
 
-/* --------------------------------------------------------------------------
-   Posicionamento de Precisão dos 8 Círculos (4 Cardinais + 4 Diagonais)
-   -------------------------------------------------------------------------- */
-
-/* 1. Superior (Cardreal 0°) */
 .circle-top {
     top: -12px;
     left: 50%;
-    transform: translateX(-50%);
+    margin-left: -34px;
 }
 
 .circle-top:hover {
-    transform: translateX(-50%) scale(1.2);
+    transform: scale(1.22);
 }
 
-/* 2. Superior Direito (Diagonal 45°) */
 .circle-top-right {
     top: 22px;
     right: 22px;
 }
 
-/* 3. Direito (Cardreal 90°) */
 .circle-right {
     top: 50%;
     right: -12px;
-    transform: translateY(-50%);
+    margin-top: -34px;
 }
 
 .circle-right:hover {
-    transform: translateY(-50%) scale(1.2);
+    transform: scale(1.22);
 }
 
-/* 4. Inferior Direito (Diagonal 135°) */
 .circle-bottom-right {
     bottom: 22px;
     right: 22px;
 }
 
-/* 5. Inferior (Cardreal 180°) */
 .circle-bottom {
     bottom: -12px;
     left: 50%;
-    transform: translateX(-50%);
+    margin-left: -34px;
 }
 
 .circle-bottom:hover {
-    transform: translateX(-50%) scale(1.2);
+    transform: scale(1.22);
 }
 
-/* 6. Inferior Esquerdo (Diagonal 225°) */
 .circle-bottom-left {
     bottom: 22px;
     left: 22px;
 }
 
-/* 7. Esquerdo (Cardreal 270°) */
 .circle-left {
     top: 50%;
     left: -12px;
-    transform: translateY(-50%);
+    margin-top: -34px;
 }
 
 .circle-left:hover {
-    transform: translateY(-50%) scale(1.2);
+    transform: scale(1.22);
 }
 
-/* 8. Superior Esquerdo (Diagonal 315°) */
 .circle-top-left {
     top: 22px;
     left: 22px;
@@ -374,82 +433,238 @@
     line-height: 1.45;
 }
 
-/* --------------------------------------------------------------------------
-   Design Responsivo (Smartphones e Tablets)
-   -------------------------------------------------------------------------- */
+.teorico-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 18, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: modalFadeIn 0.3s ease forwards;
+}
 
-@media (max-width: 968px) {
-    .abordagem-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
     }
-
-    .theorists-diagram-wrapper {
-        max-width: 100%;
+    to {
+        opacity: 1;
     }
 }
 
-@media (max-width: 480px) {
-    .theorists-diagram-container {
-        width: 310px;
-        height: 310px;
-    }
+.teorico-modal-hub {
+    position: relative;
+    width: 75vw;
+    height: 75vh;
+    max-width: 1200px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 32px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4rem;
+    overflow: hidden;
+    animation: modalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 
-    .center-psi-circle {
-        width: 160px;
-        height: 160px;
+@keyframes modalScaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
     }
-
-    .psi-symbol-large {
-        font-size: 4rem;
-    }
-
-    .theorist-circle {
-        width: 54px;
-        height: 54px;
-        border-width: 2px;
-    }
-
-    .circle-top {
-        top: -10px;
-    }
-
-    .circle-top-right {
-        top: 15px;
-        right: 15px;
-    }
-
-    .circle-right {
-        right: -10px;
-    }
-
-    .circle-bottom-right {
-        bottom: 15px;
-        right: 15px;
-    }
-
-    .circle-bottom {
-        bottom: -10px;
-    }
-
-    .circle-bottom-left {
-        bottom: 15px;
-        left: 15px;
-    }
-
-    .circle-left {
-        left: -10px;
-    }
-
-    .circle-top-left {
-        top: 15px;
-        left: 15px;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
-/* ==========================================================================
-   Design Responsivo Avançado (Smartphones, Foldables & Tablets)
-   ========================================================================== */
+.modal-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--sage-pale);
+    color: var(--sage-darker);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    background: var(--sage-dark);
+    color: #ffffff;
+    transform: rotate(90deg);
+}
+
+.modal-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    color: var(--sage-dark);
+    border: 1.5px solid var(--border-subtle);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.modal-nav-arrow:hover {
+    background: var(--sage-dark);
+    color: #ffffff;
+    border-color: var(--sage-dark);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modal-nav-arrow.arrow-left {
+    left: 1rem;
+}
+
+.modal-nav-arrow.arrow-right {
+    right: 1rem;
+}
+
+.modal-content-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.modal-image-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    height: 100%;
+    animation: imageRiseUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes imageRiseUp {
+    0% {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-image-frame {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(var(--sage-dark-rgb), 0.25);
+    background-color: var(--sage-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-theorist-index {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--sage-dark);
+    letter-spacing: 2px;
+}
+
+.modal-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: 1rem;
+    animation: textSlideLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes textSlideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.modal-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.modal-badge {
+    align-self: flex-start;
+    padding: 0.35rem 0.9rem;
+    background-color: var(--sage-pale);
+    color: var(--sage-darker);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.modal-theorist-name {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.15;
+}
+
+.modal-theorist-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--sage-dark);
+}
+
+.modal-summary-wrapper {
+    background-color: var(--bg-page);
+    border-left: 4px solid var(--sage-dark);
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.modal-summary-text {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    line-height: 1.75;
+    text-align: justify;
+}
 
 @media (max-width: 1024px) {
     .abordagem-section {
@@ -465,6 +680,27 @@
         max-width: 520px;
         width: 100%;
         margin: 0 auto;
+    }
+
+    .teorico-modal-hub {
+        width: 85vw;
+        height: 80vh;
+        padding: 2.5rem 3rem;
+    }
+
+    .modal-content-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        overflow-y: auto;
+    }
+
+    .modal-image-frame {
+        width: 170px;
+        height: 170px;
+    }
+
+    .modal-summary-text {
+        font-size: 0.98rem;
     }
 }
 
@@ -486,7 +722,6 @@
         border-radius: 24px;
     }
 
-    /* Órbita adaptada para tablets pequenos */
     .theorists-diagram-container {
         width: 340px;
         height: 340px;
@@ -506,15 +741,38 @@
         height: 60px;
     }
 
-    /* Posições orbitais ajustadas */
-    .circle-top { top: -10px; }
+    .circle-top { top: -10px; margin-left: -30px; }
     .circle-top-right { top: 18px; right: 18px; }
-    .circle-right { right: -10px; }
+    .circle-right { right: -10px; margin-top: -30px; }
     .circle-bottom-right { bottom: 18px; right: 18px; }
-    .circle-bottom { bottom: -10px; }
+    .circle-bottom { bottom: -10px; margin-left: -30px; }
     .circle-bottom-left { bottom: 18px; left: 18px; }
-    .circle-left { left: -10px; }
+    .circle-left { left: -10px; margin-top: -30px; }
     .circle-top-left { top: 18px; left: 18px; }
+
+    .teorico-modal-hub {
+        width: 92vw;
+        height: 85vh;
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .modal-nav-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .modal-nav-arrow.arrow-left {
+        left: 0.5rem;
+    }
+
+    .modal-nav-arrow.arrow-right {
+        right: 0.5rem;
+    }
+
+    .modal-theorist-name {
+        font-size: 1.7rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -565,7 +823,6 @@
         border-radius: 20px;
     }
 
-    /* Tamanho otimizado para celulares padrão (até 480px) */
     .theorists-diagram-container {
         width: 290px;
         height: 290px;
@@ -584,22 +841,40 @@
     .theorist-circle {
         width: 50px;
         height: 50px;
-        border-width: 2px;
     }
 
-    /* Re-alinhamento orbital milimétrico sem cortes nas bordas */
-    .circle-top { top: -8px; }
+    .circle-top { top: -8px; margin-left: -25px; }
     .circle-top-right { top: 14px; right: 14px; }
-    .circle-right { right: -8px; }
+    .circle-right { right: -8px; margin-top: -25px; }
     .circle-bottom-right { bottom: 14px; right: 14px; }
-    .circle-bottom { bottom: -8px; }
+    .circle-bottom { bottom: -8px; margin-left: -25px; }
     .circle-bottom-left { bottom: 14px; left: 14px; }
-    .circle-left { left: -8px; }
+    .circle-left { left: -8px; margin-top: -25px; }
     .circle-top-left { top: 14px; left: 14px; }
+
+    .teorico-modal-hub {
+        width: 95vw;
+        height: 90vh;
+        padding: 2.2rem 1rem 1rem 1rem;
+    }
+
+    .modal-image-frame {
+        width: 120px;
+        height: 120px;
+    }
+
+    .modal-theorist-name {
+        font-size: 1.4rem;
+    }
+
+    .modal-summary-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        text-align: left;
+    }
 }
 
 @media (max-width: 360px) {
-    /* Dispositivos extremamente estreitos (ex: Galaxy Fold fechado / telas < 360px) */
     .theorists-diagram-container {
         width: 250px;
         height: 250px;
@@ -617,15 +892,14 @@
     .theorist-circle {
         width: 44px;
         height: 44px;
-        border-width: 2px;
     }
 
-    .circle-top { top: -6px; }
+    .circle-top { top: -6px; margin-left: -22px; }
     .circle-top-right { top: 10px; right: 10px; }
-    .circle-right { right: -6px; }
+    .circle-right { right: -6px; margin-top: -22px; }
     .circle-bottom-right { bottom: 10px; right: 10px; }
-    .circle-bottom { bottom: -6px; }
+    .circle-bottom { bottom: -6px; margin-left: -22px; }
     .circle-bottom-left { bottom: 10px; left: 10px; }
-    .circle-left { left: -6px; }
+    .circle-left { left: -6px; margin-top: -22px; }
     .circle-top-left { top: 10px; left: 10px; }
 }

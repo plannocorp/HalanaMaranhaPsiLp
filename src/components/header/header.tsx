@@ -14,6 +14,13 @@ function Header() {
         setIsMenuOpen(false)
     }
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+
     // Listener para alterar background/sombra do header ao rolar
     useEffect(() => {
         const handleScroll = () => {
@@ -86,9 +93,9 @@ function Header() {
 
                 {/* Desktop Navigation Links com Detecção Dinâmica de Seção */}
                 <nav className="desktop-nav" aria-label="Navegação principal">
-                    <a 
-                        href="#home" 
+                    <a
                         className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
+                        onClick={scrollToTop}
                     >
                         Home
                     </a>
